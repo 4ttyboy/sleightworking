@@ -21,8 +21,6 @@
       }
 
 
-
-
       :root {
         --bg-color: #40bbf5
       }
@@ -61,6 +59,8 @@
 
 
       }
+      
+
 
       .sphere::after {
         content: "";
@@ -73,6 +73,22 @@
         border-radius: 50%;
         background: rgba(0, 0, 0, 0.5);
         transform: skewX(0deg);
+        filter: blur(5px);
+      }
+      
+      .sheen {
+        position: absolute;
+        top: 10%;
+        right: 10%;
+        width: 80px;
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: -1;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(196,184,252,1) 6%, rgba(0,0,0,1) 53%);
+        transform: skewX(24deg);
         filter: blur(5px);
       }
 
@@ -98,8 +114,6 @@
 
 
 
-
-
     <section>
 
 
@@ -107,6 +121,9 @@
 
 
       <div class="sphere">
+        <div class="sheen">
+          
+        </div>
 
         <div class="eight" id="eight">
           8
