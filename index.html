@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <!-- my meta data -->
+    <meta charset="utf-8">
+    <title> Sleight-Ball </title>
+    <meta name="description" content="the sleight ball site">
+    <meta name="author" content="Atlas">
+
+
+    <style>
+      h1 {
+        text-align: center;
+        margin-bottom: 50px;
+
+      }
+
+      p {
+        text-align: center;
+        /*         margin: 100px, 100px, 600px, 200px; */
+      }
+
+
+
+
+      :root {
+        --bg-color: #40bbf5
+      }
+
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: radial-gradient(circle, rgba(37, 210, 255, 1) 14%, rgba(4, 41, 150, 1) 53%, rgba(5, 10, 93, 1) 59%);
+      }
+
+      .sphere {
+        position: relative;
+        width: 250px;
+        height: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: -1;
+        border-radius: 50%;
+        background: black
+      }
+
+      .sphere::before {
+        content: "";
+        top: 30%;
+        left: 29%;
+        width: 90px;
+        height: 90px;
+        position: absolute;
+        z-index: -1;
+        border-radius: 50%;
+        background: #b1e5ff;
+
+
+      }
+
+      .sphere::after {
+        content: "";
+        position: absolute;
+        top: 75%;
+        left: -5%;
+        z-index: -5;
+        width: 220px;
+        height: 70px;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.5);
+        transform: skewX(0deg);
+        filter: blur(5px);
+      }
+
+      .eight {
+        /*         position:relative; */
+        color: black;
+        font-size: 30px;
+        transform: translate(-6px, 0px);
+
+      }
+
+
+
+      section {
+
+        display: flex;
+        flex-direction: column;
+
+      }
+    </style>
+  </head>
+  <body>
+
+
+
+
+
+    <section>
+
+
+      <h1 style="color: #09107d;">SLEIGHT BALL </h1>
+
+
+      <div class="sphere">
+
+        <div class="eight" id="eight">
+          8
+        </div>
+
+      </div>
+
+
+      <p style="color: #09107d;"><button onclick="change_text()" id="btn">
+
+          Shake Me ! </button> </p>
+
+
+    </section>
+
+
+    <script>
+      const namelist = [
+        'Ask Again', 'Flip a coin', 'Decide', 'Maybe?', 'Rather unclear', 'Ask your mom',
+        'look it up', 'Checked a dictionary?', 'Ask Again LATER', '¯\_(ツ)_/¯', 'idk',
+        'Get a hobby', 'Indifference', 'Ambivalent', 'idc', 'Trust your gut', 'Guess', 'Check the weather',
+        'Hmm...', 'no <3', 'yeah sure'
+      ];
+
+      function change_text() {
+      const random = namelist[Math.floor(Math.random() * namelist.length)];
+      const eight = document.getElementById("eight")
+      eight.innerHTML = random;
+      
+      }
+      // const eight = document.getElementById("eight") element.style.fontSize = 15px;
+
+
+      const btn = document.getElementById("btn");
+      btn.addEventListener("click", change_text)
+    </script>
+
+
+  </body>
+</html>
