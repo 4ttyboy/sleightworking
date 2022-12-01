@@ -12,8 +12,20 @@
       h1 {
         text-align: center;
         margin-bottom: 50px;
-
+ @font-face {
+          font-family: "gone";
+          src: local("youre gone.otf") format(opentype),
+            url("https://github.com/4ttyboy/sleightworking/blob/main/youre%20gone.otf")
+        }
       }
+
+/*       .title {
+        @font-face {
+          font-family: "gone";
+          src: local("youre gone.otf") format(opentype),
+            url("https://github.com/4ttyboy/sleightworking/blob/main/youre%20gone.otf")
+        } */
+      
 
       p {
         text-align: center;
@@ -25,6 +37,8 @@
         --bg-color: #40bbf5
       }
 
+
+
       body {
         margin: 0;
         height: 100vh;
@@ -32,6 +46,8 @@
         justify-content: center;
         align-items: center;
         background: radial-gradient(circle, rgba(37, 210, 255, 1) 14%, rgba(4, 41, 150, 1) 53%, rgba(5, 10, 93, 1) 59%);
+        font-family: "gone";
+        font-weight: bold;
       }
 
       .sphere {
@@ -59,7 +75,7 @@
 
 
       }
-      
+
 
 
       .sphere::after {
@@ -75,7 +91,7 @@
         transform: skewX(0deg);
         filter: blur(5px);
       }
-      
+
       .sheen {
         position: absolute;
         top: 10%;
@@ -87,7 +103,7 @@
         align-items: center;
         z-index: -1;
         border-radius: 50%;
-        background: radial-gradient(circle, rgba(196,184,252,1) 6%, rgba(0,0,0,1) 53%);
+        background: radial-gradient(circle, rgba(196, 184, 252, 1) 6%, rgba(0, 0, 0, 1) 53%);
         transform: skewX(24deg);
         filter: blur(5px);
       }
@@ -101,7 +117,20 @@
       }
 
 
-
+      .btn {
+        background-color: yellow;
+        border-radius: 45px;
+        width: 86px;
+        height: 35px;
+        font-family: "gone";
+      }
+      
+      .btn:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(255, 255, 204, 0.19);
+      }
+      
+      
+      
       section {
 
         display: flex;
@@ -110,19 +139,20 @@
       }
     </style>
   </head>
-  <body>
 
+
+  <body>
 
 
     <section>
 
 
-      <h1 style="color: #09107d;">SLEIGHT BALL </h1>
+      <h1 style="color: #09107d;" class="title">SLEIGHT BALL </h1>
 
 
       <div class="sphere">
         <div class="sheen">
-          
+
         </div>
 
         <div class="eight" id="eight">
@@ -132,10 +162,9 @@
       </div>
 
 
-      <p style="color: #09107d;"><button onclick="change_text()" id="btn">
+      <p style="color: #09107d;"><button onclick="change_text()" id="btn" class="btn">
 
           Shake Me ! </button> </p>
-
 
     </section>
 
@@ -149,10 +178,10 @@
       ];
 
       function change_text() {
-      const random = namelist[Math.floor(Math.random() * namelist.length)];
-      const eight = document.getElementById("eight")
-      eight.innerHTML = random;
-      
+        const random = namelist[Math.floor(Math.random() * namelist.length)];
+        const eight = document.getElementById("eight")
+        eight.innerHTML = random;
+
       }
       // const eight = document.getElementById("eight") element.style.fontSize = 15px;
 
